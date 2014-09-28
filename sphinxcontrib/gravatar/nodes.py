@@ -103,7 +103,8 @@ def save_gravatar_image(outfn, node):
         build_gravatar_image_url(node['email'], node['options'])
     )
     if not hasattr(fd, 'getcode') or fd.getcode() == 200:
-        open(outfn, 'wb').write(fd.read())
+        with open(outfn, 'wb') as fp:
+            fp.write(fd.read())
     else:
         msg = "Can't fecth gravatar image for '{0}'"
         msg = msg.format(node['username'])
