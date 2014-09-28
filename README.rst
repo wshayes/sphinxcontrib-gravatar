@@ -1,5 +1,7 @@
 sphinxcontrib-gravatar is a Sphinx extension for Gravatar
 
+|travis| |coveralls| |downloads| |version| |license|
+
 Features
 ========
 * Provide ``gravatar icon`` for your document.
@@ -90,3 +92,23 @@ License
 * sphinxcontrib-gravatar Licensed under the BSD License.
 
 See the LICENSE file for specific terms.
+
+.. |travis| image:: https://travis-ci.org/tell-k/sphinxcontrib-gravatar.svg?branch=master
+    :target: https://travis-ci.org/tell-k/sphinxcontrib-gravatar
+
+.. |coveralls| image:: https://coveralls.io/repos/tell-k/sphinxcontrib-gravatar/badge.png
+    :target: https://coveralls.io/r/tell-k/sphinxcontrib-gravatar
+    :alt: coveralls.io
+
+.. |downloads| image:: https://pypip.in/d/sphinxcontrib-gravatar/badge.png
+    :target: http://pypi.python.org/pypi/sphinxcontrib-gravatar/
+    :alt: downloads
+
+.. |version| image:: https://pypip.in/v/sphinxcontrib-gravatar/badge.png
+    :target: http://pypi.python.org/pypi/sphinxcontrib-gravatar/
+    :alt: latest version
+
+.. |license| image:: https://pypip.in/license/sphinxcontrib-gravatar/badge.png
+    :target: http://pypi.python.org/pypi/sphinxcontrib-gravatar/
+    :alt: license
+
