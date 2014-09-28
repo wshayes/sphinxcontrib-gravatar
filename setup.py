@@ -9,7 +9,7 @@ long_description = '\n'.join([
     open(os.path.join(".", "HISTORY.rst")).read(),
 ])
 
-requires = ['Sphinx>=1.2', 'setuptools']
+requires = ['Sphinx>=1.2']
 
 classifiers = [
     'Development Status :: 4 - Beta',
