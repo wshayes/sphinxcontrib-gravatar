@@ -9,7 +9,7 @@ long_description = '\n'.join([
     open(os.path.join(".", "HISTORY.rst")).read(),
 ])
 
-requires = ['Sphinx>=1.0']
+requires = ['Sphinx>=1.2']
 
 classifiers = [
     'Development Status :: 4 - Beta',
@@ -25,7 +25,7 @@ classifiers = [
 
 setup(
     name='sphinxcontrib-gravatar',
-    version='0.1',
+    version='0.1.0',
     url='https://github.com/tell-k/sphinxcontrib-gravatar',
     download_url='http://pypi.python.org/pypi/sphinxcontrib-gravatar',
     license='BSD',
