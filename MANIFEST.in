@@ -1,0 +1,10 @@
+include README.rst
+include LICENSE.rst
+include AUTHORS.rst
+include HISTORY.rst
+recursive-include doc *
+recursive-include test *
+global-exclude *.pyc
+exclude .gitignore
+exclude .travis.yml
+prune doc/_build
