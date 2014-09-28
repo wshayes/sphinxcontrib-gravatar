@@ -49,13 +49,13 @@ class GravatarDirective(Directive):
 
         user_settings = dict(config.gravatar_users).get(node['username'])
         if not user_settings:
-            msg = "You must set '{}' settings to 'gravatar_users'."
+            msg = "You must set '{0}' settings to 'gravatar_users'."
             msg = msg.format(node['username'])
             reporter = self.state.document.reporter
             return [reporter.warning(msg, line=self.lineno)]
 
         if 'email' not in user_settings:
-            msg = "You must set 'email' settings for '{}'."
+            msg = "You must set 'email' settings for '{0}'."
             msg = msg.format(node['username'])
             reporter = self.state.document.reporter
             return [reporter.warning(msg, line=self.lineno)]

@@ -46,7 +46,7 @@ def build_gravatar_image_url(email, options):
     :refs: https://en.gravatar.com/site/implement/images/
     """
     query_params = {}
-    url = "http://www.gravatar.com/avatar/{}".format(_hash(email))
+    url = "http://www.gravatar.com/avatar/{0}".format(_hash(email))
     if options.get("size"):
         query_params.update({'s': options.get("size")})
     if options.get("default"):
@@ -64,7 +64,7 @@ def build_gravatar_profile_url(email):
 
     :refs: https://en.gravatar.com/site/implement/profile/
     """
-    return "http://www.gravatar.com/{}".format(_hash(email))
+    return "http://www.gravatar.com/{0}".format(_hash(email))
 
 
 def get_image_filename(self, node, prefix='gravatar'):
@@ -74,7 +74,7 @@ def get_image_filename(self, node, prefix='gravatar'):
     if opt:
         opt = "-" + opt
 
-    fname = '{}-{}{}.png'
+    fname = '{0}-{1}{2}.png'
     fname = fname.format(prefix, _hash(node['email']), opt)
 
     if hasattr(self.builder, 'imgpath'):
@@ -105,7 +105,7 @@ def save_gravatar_image(outfn, node):
     if not hasattr(fd, 'getcode') or fd.getcode() == 200:
         open(outfn, 'wb').write(fd.read())
     else:
-        msg = "Can't fecth gravatar image for '{}'"
+        msg = "Can't fecth gravatar image for '{0}'"
         msg = msg.format(node['username'])
         raise GravatarError(msg)
 
@@ -114,8 +114,8 @@ def html_visit_gravatar_image(self, node):
     fname, outfn = get_image_filename(self, node)
     save_gravatar_image(outfn, node)
 
-    linktag_format = '<a href="{}" class="gravatar-link">{}</a>'
-    imgtag_format = '<img src="{}" alt="{}" class="{}" />'
+    linktag_format = '<a href="{0}" class="gravatar-link">{1}</a>'
+    imgtag_format = '<img src="{0}" alt="{1}" class="{2}" />'
 
     imgtag = imgtag_format.format(fname, node['alt'], node['css_class'])
 
