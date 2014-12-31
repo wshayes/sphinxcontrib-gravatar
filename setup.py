@@ -1,7 +1,29 @@
 # -*- coding: utf-8 -*-
 
 import os
+import sys
 from setuptools import setup, find_packages
+from setuptools.command.test import test as TestCommand
+
+
+class PyTest(TestCommand):
+    user_options = [('pytest-args=', 'a', "Arguments to pass to py.test")]
+
+    def initialize_options(self):
+        TestCommand.initialize_options(self)
+        self.pytest_args = []
+
+    def finalize_options(self):
+        TestCommand.finalize_options(self)
+        self.test_args = []
+        self.test_suite = True
+
+    def run_tests(self):
+        # import here, cause outside the eggs aren't loaded
+        import pytest
+        errno = pytest.main(self.pytest_args)
+        sys.exit(errno)
+
 
 long_description = '\n'.join([
     open(os.path.join(".", "README.rst")).read(),
@@ -10,6 +32,12 @@ long_description = '\n'.join([
 ])
 
 requires = ['Sphinx>=1.2']
+
+tests_require = [
+    "pytest-cov",
+    "pytest",
+    "mock",
+]
 
 classifiers = [
     'Development Status :: 4 - Beta',
@@ -25,7 +53,7 @@ classifiers = [
 
 setup(
     name='sphinxcontrib-gravatar',
-    version='0.1.0',
+    version='0.1.1',
     url='https://github.com/tell-k/sphinxcontrib-gravatar',
     download_url='http://pypi.python.org/pypi/sphinxcontrib-gravatar',
     license='BSD',
@@ -39,5 +67,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=requires,
+    tests_require=tests_require,
+    cmdclass={'test': PyTest},
     namespace_packages=['sphinxcontrib'],
 )
