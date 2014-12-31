@@ -8,7 +8,7 @@
 """
 __docformat__ = 'restructuredtext'
 __author__ = 'tell-k'
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 from sphinxcontrib.gravatar.nodes import (
     gravatar_image,
