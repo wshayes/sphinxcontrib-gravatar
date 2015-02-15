@@ -243,7 +243,7 @@ class TestGravatarDirective(object):
                     'unlink': False,
                 }),
             ),
-            gravatar_unlink = True,
+            gravatar_unlink=True,
         )
         assert False is directive.run()[0]['unlink']
 

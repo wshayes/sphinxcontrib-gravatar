@@ -6,16 +6,14 @@
     :author: tell-k <ffk2005@gmail.com>
     :copyright: tell-k. All Rights Reserved.
 """
-__docformat__ = 'restructuredtext'
-__author__ = 'tell-k'
-__version__ = '0.1.1'
-
 from sphinxcontrib.gravatar.nodes import (
     gravatar_image,
     html_visit_gravatar_image,
     latex_visit_gravatar_image,
 )
 from sphinxcontrib.gravatar.directives import GravatarDirective
+
+__version__ = '0.1.2'
 
 
 def setup(app):

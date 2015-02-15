@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
+import re
 import os
 import sys
+
 from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
 
@@ -24,14 +26,19 @@ class PyTest(TestCommand):
         errno = pytest.main(self.pytest_args)
         sys.exit(errno)
 
+here = os.path.dirname(__file__)
+
+version_regex = re.compile(r".*__version__ = '(.*?)'", re.S)
+version_script = os.path.join(here, 'sphinxcontrib', 'gravatar', '__init__.py')
+version = version_regex.match(open(version_script, 'r').read()).group(1)
 
 long_description = '\n'.join([
-    open(os.path.join(".", "README.rst")).read(),
-    open(os.path.join(".", "AUTHORS.rst")).read(),
-    open(os.path.join(".", "HISTORY.rst")).read(),
+    open(os.path.join(here, "README.rst")).read(),
+    open(os.path.join(here, "AUTHORS.rst")).read(),
+    open(os.path.join(here, "HISTORY.rst")).read(),
 ])
 
-requires = ['Sphinx>=1.2']
+install_requires = ['Sphinx>=1.2']
 
 tests_require = [
     "pytest-cov",
@@ -58,7 +65,7 @@ classifiers = [
 
 setup(
     name='sphinxcontrib-gravatar',
-    version='0.1.2',
+    version=version,
     url='https://github.com/tell-k/sphinxcontrib-gravatar',
     download_url='http://pypi.python.org/pypi/sphinxcontrib-gravatar',
     license='BSD',
@@ -71,7 +78,7 @@ setup(
     platforms='any',
     packages=find_packages(exclude=["tests"]),
     include_package_data=True,
-    install_requires=requires,
+    install_requires=install_requires,
     tests_require=tests_require,
     cmdclass={'test': PyTest},
     namespace_packages=['sphinxcontrib'],
