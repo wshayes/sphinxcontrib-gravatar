@@ -100,19 +100,18 @@ See the LICENSE file for specific terms.
     :target: https://coveralls.io/r/tell-k/sphinxcontrib-gravatar
     :alt: coveralls.io
 
-.. |downloads| image:: https://pypip.in/d/sphinxcontrib-gravatar/badge.png
-    :target: http://pypi.python.org/pypi/sphinxcontrib-gravatar/
-    :alt: downloads
-
-.. |version| image:: https://pypip.in/v/sphinxcontrib-gravatar/badge.png
-    :target: http://pypi.python.org/pypi/sphinxcontrib-gravatar/
-    :alt: latest version
-
-.. |license| image:: https://pypip.in/license/sphinxcontrib-gravatar/badge.png
-    :target: http://pypi.python.org/pypi/sphinxcontrib-gravatar/
-    :alt: license
-
 .. |requires| image:: https://requires.io/github/tell-k/sphinxcontrib-gravatar/requirements.svg?tag=v0.1.1
      :target: https://requires.io/github/tell-k/sphinxcontrib-gravatar/requirements/?tag=v0.1.1
      :alt: requires.io
 
+.. |downloads| image:: https://img.shields.io/pypi/dm/sphinxcontrib-gravatar.svg
+    :target: http://pypi.python.org/pypi/sphinxcontrib-gravatar/
+    :alt: downloads
+
+.. |version| image:: https://img.shields.io/pypi/v/sphinxcontrib-gravatar.svg
+    :target: http://pypi.python.org/pypi/sphinxcontrib-gravatar/
+    :alt: latest version
+
+.. |license| image:: https://img.shields.io/pypi/l/sphinxcontrib-gravatar.svg
+    :target: http://pypi.python.org/pypi/sphinxcontrib-gravatar/
+    :alt: license
