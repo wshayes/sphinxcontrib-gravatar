@@ -13,7 +13,11 @@ from __future__ import (
     unicode_literals,
 )
 from docutils.parsers.rst import directives
-from sphinx.util.compat import Directive
+
+try:
+    from sphinx.util.compat import Directive
+except ImportError:
+    from docutils.parsers.rst import Directive
 
 from sphinxcontrib.gravatar.nodes import gravatar_image
 
